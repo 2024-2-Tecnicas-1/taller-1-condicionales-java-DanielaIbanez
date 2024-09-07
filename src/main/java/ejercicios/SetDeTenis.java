@@ -8,8 +8,27 @@ import java.util.Scanner;
  */
 public class SetDeTenis {
     public static String evaluar(int numVictoriasA, int numVictoriasB) {
-        // TODO: Coloca aquí el código del ejercicio 1: Set de tenis
-        return "";
+      /*  if (numVictoriasA> 7 || numVictoriasB> 7 || (numVictoriasA < 0 || numVictoriasB < 0 || (numVictoriasA > 6 && numVictoriasB > 6 || (numVictoriasA >= 7 && numVictoriasB < 5 || (numVictoriasB >=7 && numVictoriasA <5
+    ))))){
+            return "Inválido";
+        }*/
+        if (numVictoriasA < 0 || numVictoriasB < 0 || numVictoriasA > 7 || numVictoriasB > 7  || 
+        (numVictoriasA == 7 && numVictoriasB < 5) || (numVictoriasB == 7 && numVictoriasA< 5) ) {
+        return "Inválido";
+    }
+
+        if ((numVictoriasA >= 6 && numVictoriasA >= numVictoriasB + 2) || 
+        (numVictoriasA == 7 && numVictoriasB == 6)){
+            return"Ganó A";        }
+
+        if ((numVictoriasB >= 6 && numVictoriasB >= numVictoriasA + 2) || 
+            (numVictoriasB == 7 && numVictoriasA == 6)) {
+                return"Ganó B";  }
+         
+       
+        return "Aún no termina";
+
+        
     }
     
     public static void main(String[] args) {
@@ -22,5 +41,6 @@ public class SetDeTenis {
         
         String respuesta = evaluar(numVictoriasA, numVictoriasB);
         System.out.println(respuesta);
+        lector.close();
     }
 }
